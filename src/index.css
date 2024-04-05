@@ -1,13 +1,103 @@
-body {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+*{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+html, body{
+  width: 100%;
+  height: 100%;
+  background-color: #FeFeFe;
+  scroll-behavior: smooth;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #FeFeFe; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(168, 168, 168); 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #b7b7b7; 
+}
+
+.link{
+  position: relative;
+}
+
+.link .line{
+  display: inline-block;
+  height: 1px;
+  position: absolute;
+  background-color: #000;
+  bottom: 0;
+}
+
+.link .line1{
+  width: 0%;
+  left: 0;
+  transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s;
+  transition-delay: .2s;
+}
+
+.link .line2{
+  width: 100%;
+  right: 0;
+  transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s;
+}
+
+.link:hover .line2{
+  width: 0;
+}
+
+.link:hover .line1{
+  width: 100%;
+}
+
+a{
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #000;
+  text-decoration: none;
+}
+
+nav{
+  /* height: 100px; */
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  padding: 0 4vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.page-px{
+  padding-left:4vw;
+  padding-right: 4vw;
+}
+
+.img-text {
+  font-weight: 800;
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+	background-image: url('https://images.freecreatives.com/wp-content/uploads/2016/02/Seamless-Free-Red-Textures.jpg');
 }
