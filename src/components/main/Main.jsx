@@ -4,6 +4,13 @@ import avatar from '../../avatar.avif';
 
 export default function Main() {
   return (
+            // <main
+            //     id='home'
+            //     className='h-screen w-full flex items-center 
+            //         max-md:flex-col
+            //         max-[400px]:h-[90vh]
+            //     '
+            // >
             <main
                 id='home'
                 className='h-screen w-full flex items-center 
@@ -34,7 +41,7 @@ export default function Main() {
                     </div>
                 </section>
                 <section className='container w-[70%] h-full font-semibold text-slate-600 tracking-wide flex items-center
-                        max-md:items-start max-md:pt-6 max-md:justify-center
+                         max-md:pt-6 max-md:justify-center
                         max-md:w-full max-md:h-1/2
                     ' 
                 >
@@ -50,14 +57,14 @@ export default function Main() {
                             data-aos-delay='200'
                             className='text-7xl uppercase font-semibold font-sans uppercas
                                 max-lg:text-6xl
-                                max-md:text-4xl
+                                max-md:text-[13vw]
                                 
                                 '
                         >Pranaam</h1>
                         <h2 
                         data-aos="fade-up"
                         data-aos-delay='400'
-                        className='text-xl uppercase my-4
+                        className='text-xl uppercase my-6
                                 max-lg:text-xl
                             '
                         >

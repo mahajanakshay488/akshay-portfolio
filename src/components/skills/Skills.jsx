@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Button from '../../tailwinds/comps/Button';
 import htmlLogo from '../../utils/logos/htmll.png';
 import cssLogo from '../../utils/logos/cssl.png';
@@ -12,14 +12,34 @@ import gitLogo from '../../utils/logos/github.webp';
 import mernLogo from '../../utils/logos/mernLogo.png';
 
 export default function Skills() {
+
+    const divRef = useRef(null);
+    const skillCotainerRef = useRef(null);
+    const [skillContHeight, setSkillContHeight] = useState(1000);
+
+    useEffect(()=>{
+        if(divRef && skillCotainerRef){
+            console.log('divRef ', divRef.current.offsetHeight);
+            console.log('skillContReff', skillCotainerRef.current.offsetHeight);
+            setSkillContHeight((divRef.current.offsetHeight) + 'px');
+        }
+    },[divRef.current, skillCotainerRef]);
+
+    useEffect(()=>{
+        console.log('skill state cont height', skillContHeight)
+    },[skillContHeight])
+
   return (
-    <section className='w-full h-[95vh] relative
-                max-xl:h-[107vh]
-                max-md:h-[112vh]
-                    max-sm:h-[194vh]
-                '>
+    // <section ref={skillCotainerRef} className='w-full h-[95vh] relative
+    //             max-xl:h-[107vh]
+    //             max-md:h-[112vh]
+    //                 max-sm:h-[194vh]
+    //             '>
+    <section ref={skillCotainerRef} style={{height: skillContHeight}} className={`w-full relative
+                `}>
 
                 <section 
+                    ref={divRef}
                     id='skills'
                     className=' bg-[#fad77f] w-10/12 h-auto absolute -top-16 left-1/2 -translate-x-1/2 rounded-md shadow-lg shadow-#f0cf7b p-2 py-8 flex flex-col justify-between items-center
         max-md:-top-5 max-sm:w-[90%]
